@@ -2,7 +2,7 @@
 
 This is a simple system I came up with for running multiple Twitter bots from my Raspberry Pi. Note I run this on Raspbian GNU/Linux 8 (jessie).
 
-I've also includded the code to a few of my own bots in the /bots directory, to help get you started with making bots in node.js. It's pretty easy, just use [Twit](https://github.com/ttezel/twit).
+I've also includded the code to a few of my own bots in the /bots directory, to help get you started with making bots in node.js. Basically just use [Twit](https://github.com/ttezel/twit).
 
 The setup is pretty easy. Just install node.js and:
 
