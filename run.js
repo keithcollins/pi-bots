@@ -2,7 +2,7 @@
 var fs = require('fs');
 var exec = require('child_process').exec;
 
-var root = "/home/pi/pi-bots/";
+var root = "/home/pi/pi-bots/bots/";
 var tasks = JSON.parse(fs.readFileSync(root+"tasks.json", 'utf8'));
 
 var logMessage = [];

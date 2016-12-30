@@ -24,15 +24,15 @@ You can run your bots the same way. For example, if you want to run a bot every 
 
 ```
 "2hours": [
-  "/usr/sbin/node /home/pi/pi-bots/example_bots/ascii_bot/app.js",
+  "/usr/sbin/node /home/pi/pi-bots/bots/ascii_bot/app.js",
 ],
  ```
 You can also run multiple bots at the same interval:
 
 ```
 "2hours": [
-  "/usr/sbin/node /home/pi/pi-bots/example_bots/ascii_bot/app.js",
-  "/usr/sbin/node /home/pi/pi-bots/example_bots/hum/app.js"
+  "/usr/sbin/node /home/pi/pi-bots/bots/ascii_bot/app.js",
+  "/usr/sbin/node /home/pi/pi-bots/bots/hum/app.js"
 ],
  ```
 Note you can view the most recent cron job errors/responses for each interval with, for example:

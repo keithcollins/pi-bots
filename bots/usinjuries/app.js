@@ -9,7 +9,7 @@ var T = new Twit({
   access_token_secret: ''
 });
 
-var csv = fs.readFileSync("/home/pi/pi-bots/bots/usinjuries/descs2.csv", 'utf8');
+var csv = fs.readFileSync("/home/pi/pi-bots/example_bots/usinjuries/descs2.csv", 'utf8');
 var csvdata = d3.csv.parse(csv);
 
 function getNarrative(count) {
