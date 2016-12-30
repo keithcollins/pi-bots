@@ -1,6 +1,6 @@
 # pi-bots
 
-This is a simple system I came up with for running multiple Twitter bots from my Raspberry Pi. Note I run this on Raspbian GNU/Linux 8 (jessie).
+This is a simple system I came up with for running multiple Twitter bots from my Raspberry Pi. Essentially, it really just makes cron task scheduling a tiny bit easier, and allows you to edit your schedule remotely via GitHub, using the gitpull shell script. Note I run this on Raspbian GNU/Linux 8 (jessie).
 
 I've also includded the code to a few of my own bots in the /bots directory, to help get you started with making bots in node.js. Basically just use [Twit](https://github.com/ttezel/twit).
 
