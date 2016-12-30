@@ -2,6 +2,8 @@
 
 This is a simple system I came up with for running multiple Twitter bots from my Raspberry Pi. Note I run this on Raspbian GNU/Linux 8 (jessie).
 
+I've also includded the code to a few of my own bots in the /bots directory, to help get you started with making bots in node.js. It's pretty easy, just use [Twit](https://github.com/ttezel/twit).
+
 The setup is pretty easy. Just install node.js and:
 
 1. Clone this repo to your Pi
@@ -11,6 +13,7 @@ The setup is pretty easy. Just install node.js and:
 4. Paste in the contents of pi/cron.txt
 5. Copy pi/gitpull.sh to /home/pi/shell/
 6. Make it executable with `$ chmod +x gitpull.sh`
+7. When you create a new bot, put it in a new folder in the /bots directory.
 
 If you copy pi-bots to your own repo, you can use gitpull.sh to pull from it periodically, so that you can edit your bots remotely. All you have to do is add it to an interval in tasks.json, like:
 
