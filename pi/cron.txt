@@ -1,0 +1,25 @@
+# Run crontab -e on the Raspberry Pi and paste these in.
+# They will execute run.js, which will run the tasks
+# by interval, as listed in tasks.json
+#
+*/1 * * * * /home/pi/bots/run.js 1min 2>/tmp/1minError
+# every ten minutes
+*/10 * * * * /home/pi/bots/run.js 10mins 2>/tmp/10minError
+# every 30 minutes
+*/30 * * * * /home/pi/bots/run.js 30mins 2>/tmp/30minError
+# every 1hour
+0 */1 * * * /home/pi/bots/run.js 1hour 2>/tmp/1hourError
+# every 2hours
+0 */2 * * * /home/pi/bots/run.js 2hours 2>/tmp/2hourError
+# every three hours
+0 */3 * * * /home/pi/bots/run.js 3hours 2>/tmp/3hourError
+# every 6hours
+0 */6 * * * /home/pi/bots/run.js 6hours 2>/tmp/6hourError
+# every 12hours
+0 */12 * * * /home/pi/bots/run.js 12hours 2>/tmp/12hourError
+# once a day at 10pm
+0 22 * * * /home/pi/bots/run.js 1day 2>/tmp/1dayError
+# once a week, Saturday, 8:05
+5 8 * * 6 /home/pi/bots/run.js 1week 2>/tmp/1weekError
+# first of every month, 12AM
+0 0 1 * * /home/pi/bots/run.js 1month 2>/tmp/1monthError

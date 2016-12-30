@@ -1,0 +1,8 @@
+{
+  "name": "bots",
+  "version": "0.0.1",
+  "dependencies": {
+    "d3": "*",
+    "twit": "*"
+  }
+}

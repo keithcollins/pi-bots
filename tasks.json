@@ -1,0 +1,30 @@
+{
+  "1min": [
+  ],
+  "10mins": [
+    "/home/pi/shell/gitpull.sh"
+  ],
+  "30mins": [
+  ],
+  "1hour": [
+  ],
+  "2hours": [
+    "/usr/sbin/node /home/pi/pi-bots/ascii_bot/app.js",
+    "/usr/sbin/node /home/pi/pi-bots/hum/app.js"
+  ],
+  "3hours": [
+    "/usr/sbin/node /home/pi/pi-bots/usinjuries/app.js"
+  ],
+  "6hours": [
+  ],
+  "12hours": [
+  ],
+  "1day": [
+  ],
+  "1week": [
+  ],
+  "1month": [
+  ],
+  "persist": [
+  ]
+}
