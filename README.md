@@ -15,26 +15,25 @@ The setup is pretty easy. Just install node.js and:
 If you copy pi-bots to your own repo, you can use gitpull.sh to pull from it periodically, so that you can edit your bots remotely. All you have to do is add it to an interval in tasks.json, like:
 
 ```
-  "10mins": [
-    "/home/pi/shell/gitpull.sh"
-  ],
+"10mins": [
+  "/home/pi/shell/gitpull.sh"
+],
 ```
 
 You can run your bots the same way. For example, if you want to run a bot every two hours, you'd add the run command to that interval in tasks.json, like:
 
 ```
-  "2hours": [
-    "/usr/sbin/node /home/pi/pi-bots/ascii_bot/app.js",
-    "/usr/sbin/node /home/pi/pi-bots/hum/app.js"
-  ],
+"2hours": [
+  "/usr/sbin/node /home/pi/pi-bots/example_bots/ascii_bot/app.js",
+],
  ```
 You can also run multiple bots at the same interval:
 
 ```
-  "2hours": [
-    "/usr/sbin/node /home/pi/pi-bots/ascii_bot/app.js",
-    "/usr/sbin/node /home/pi/pi-bots/hum/app.js"
-  ],
+"2hours": [
+  "/usr/sbin/node /home/pi/pi-bots/example_bots/ascii_bot/app.js",
+  "/usr/sbin/node /home/pi/pi-bots/example_bots/hum/app.js"
+],
  ```
 Note you can view the most recent cron job errors/responses for each interval with, for example:
 

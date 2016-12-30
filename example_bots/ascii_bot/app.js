@@ -9,13 +9,13 @@ var T = new Twit({
   access_token_secret: ''
 });
 
-var tweetsRaw = fs.readFileSync("/home/pi/pi-bots/ascii_bot/tweets.json", 'utf8');
+var tweetsRaw = fs.readFileSync("/home/pi/pi-bots/example_bots/ascii_bot/tweets.json", 'utf8');
 var tweets = JSON.parse(tweetsRaw);
 
-var charpairsRaw = fs.readFileSync("/home/pi/pi-bots/ascii_bot/charpairs.json", 'utf8');
+var charpairsRaw = fs.readFileSync("/home/pi/pi-bots/example_bots/ascii_bot/charpairs.json", 'utf8');
 var charpairs = JSON.parse(charpairsRaw);
 
-var dictionaryRaw = fs.readFileSync("/home/pi/pi-bots/ascii_bot/dictionary.json", 'utf8');
+var dictionaryRaw = fs.readFileSync("/home/pi/pi-bots/example_bots/ascii_bot/dictionary.json", 'utf8');
 var dictionary = JSON.parse(dictionaryRaw);
 
 var lines = Math.floor(Math.random()*(10-5+1)+5);

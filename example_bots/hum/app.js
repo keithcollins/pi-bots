@@ -9,7 +9,7 @@ var T = new Twit({
   access_token_secret: ''
 });
 
-var csv = fs.readFileSync("/home/pi/pi-bots/hum/data.csv", 'utf8');
+var csv = fs.readFileSync("/home/pi/pi-bots/example_bots/hum/data.csv", 'utf8');
 var csvdata = d3.csv.parse(csv);
 
 var fields = Object.keys(csvdata[0]);
