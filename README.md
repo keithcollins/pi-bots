@@ -1,48 +1,45 @@
-# raspberry pi
+# pi-bots
 
-test test out of date
+This is a simple system I came up with for running multiple Twitter bots from my Raspberry Pi. Note I run this on Raspbian GNU/Linux 8 (jessie).
 
-This repo is auto-pulled to raspberry pi via cron job. On the pi, it lives in `~/bots`
+The setup is pretty easy. Just install node.js and:
 
-### Shell scripts on the pi
-
-```
-/usr/local/bin/
-│   gitpull.sh
-│   usinjuries.sh
-|   gitpullLog.txt
-|   usinjuriesLog.txt
-│
-```
-
-New shell scripts to be executed from cron need to be made executable with
-
-`$ chmod +x filename.sh`
-
-### cron jobs on the pi
-
-crontab executes shell scripts as the user who created the jobs (I think). Edit crontab with
-
+1. Clone this repo to your Pi
+2. `npm install`
+3. Edit cron jobs on your Pi
 `$ crontab -e`
+4. Paste in the contents of pi/cron.txt
+5. Copy pi/gitpull.sh to /home/pi/shell/
+6. Make it executable with `$ chmod +x gitpull.sh`
 
-Or view it with 
+If you copy pi-bots to your own repo, you can use gitpull.sh to pull from it periodically, so that you can edit your bots remotely. All you have to do is add it to an interval in tasks.json, like:
 
-`$ crontab -l`
-
-These are the current cron jobs:
 ```
-# git pull every ten minutes
-*/10 * * * * /usr/local/bin/gitpull.sh 2>/tmp/gitpullError
-# tweet usinjuries every three hours
-0 */3 * * * /usr/local/bin/usinjuries.sh 2>/tmp/usinjuriesError
+  "10mins": [
+    "/home/pi/shell/gitpull.sh"
+  ],
 ```
 
-View most recent job error/response with:
+You can run your bots the same way. For example, if you want to run a bot every two hours, you'd add the run command to that interval in tasks.json, like:
 
-`$ cat /tmp/gitpullError`
+```
+  "2hours": [
+    "/usr/sbin/node /home/pi/pi-bots/ascii_bot/app.js",
+    "/usr/sbin/node /home/pi/pi-bots/hum/app.js"
+  ],
+ ```
+You can also run multiple bots at the same interval:
 
-`$ cat /tmp/usinjuriesError`
+```
+  "2hours": [
+    "/usr/sbin/node /home/pi/pi-bots/ascii_bot/app.js",
+    "/usr/sbin/node /home/pi/pi-bots/hum/app.js"
+  ],
+ ```
+Note you can view the most recent cron job errors/responses for each interval with, for example:
 
-View cron job event log:
+`$ cat /tmp/2hourError`
+
+And you can view the cron job event log with:
 
 `$ grep CRON /var/log/syslog`
