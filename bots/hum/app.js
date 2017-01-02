@@ -9,6 +9,7 @@ var T = new Twit({
   access_token_secret: ''
 });
 
+// Note: the data file is not supplied in this example
 var csv = fs.readFileSync("/home/pi/pi-bots/bots/hum/data.csv", 'utf8');
 var csvdata = d3.csv.parse(csv);
 
