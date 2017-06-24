@@ -1,8 +1,8 @@
 # pi-bots
 
-This is a simple system I came up with for running multiple Twitter bots from my Raspberry Pi. Essentially, it really just makes cron task scheduling a tiny bit easier, and allows you to edit your schedule remotely via GitHub, using the gitpull shell script. Note I run this on Raspbian GNU/Linux 8 (jessie).
+This is a simple system I came up with for running multiple Twitter bots from my Raspberry Pi. It makes cron task scheduling a little easier, and allows you to edit your schedule remotely via GitHub, using the gitpull shell script. (You can also open your SSH port to access your Pi remotely, but this way is both automated and safer.) Note I run this on Raspbian GNU/Linux 8 (jessie).
 
-I've also includded the code to a few of my own bots in the /bots directory, to help get you started with making bots in node.js. Basically just use [Twit](https://github.com/ttezel/twit).
+I've also includded the code to a few of my own bots in the /bots directory, to help get you started with making bots in Node.js. Basically just use [Twit](https://github.com/ttezel/twit).
 
 The setup is pretty easy. Just install node.js and:
 
@@ -15,7 +15,7 @@ The setup is pretty easy. Just install node.js and:
 6. Make it executable with `$ chmod +x gitpull.sh`
 7. When you create a new bot, put it in a new folder in the /bots directory.
 
-If you copy pi-bots to your own repo, you can use gitpull.sh to pull from it periodically, so that you can edit your bots remotely. All you have to do is add it to an interval in tasks.json, like:
+If you copy pi-bots to your own repo, you can use gitpull.sh to pull from it periodically, so that you can edit your bots remotely without opening your SSH port on your home router. All you have to do is add it to an interval in tasks.json, like:
 
 ```
 "10mins": [
